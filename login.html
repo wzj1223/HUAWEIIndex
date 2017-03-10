@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6 ielt8"> <![endif]-->
+<!--[if IE 7 ]> <html lang="en" class="ie7 ielt8"> <![endif]-->
+<!--[if IE 8 ]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en"> <!--<![endif]-->
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <!--meta:compat 让ie浏览器最新核渲染-->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <!--cc:ie8-->
+    <!--[if lte IE 8]>
+    <script src="js/respond.min.js"></script>
+    <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<form action="#" method="post" id="form1">
+        <div id="header">
+            <div class="container">
+                <div class="logo pull-left"><a href="index.html"><img src="picture/logo_new.png" alt=""></a></div>
+            </div>
+        </div>
+    <div id="login" class="container">
+        <div class="row">
+            <div class="col-sm-7 col-xs-12 center-block float-none">
+                <h3 class="red-title">登录</h3>
+                <div class="login-con">
+                    <div class="red-line"></div>
+                    <div class="login-input">
+                        <div class="row">
+                            <div class="col-sm-8 center-block float-none">
+                                <div class="user clearfix">
+                                    <input type="text" maxlength="50" name="userName" id="userName" class="form-control placeholder" placeholder="邮箱/账号">
+                                    <span></span>
+                                    <div id="userNameErrMsg" class="errMsg"></div>
+
+                                </div>
+                                <div class="user pwd clearfix">
+                                    <input type="password" maxlength="50" name="userPwd" id="userPwd" class="form-control placeholder" placeholder="密码">
+                                    <span class="pwd-icon"></span>
+                                    <div id="userPwdErrMsg" class="errMsg"></div>
+                                </div>
+                                <div class="sign-btn">
+                                    <input type="button" id="login-btn" class="btn btn-block " value="登录">
+                                </div>
+                                <div class="logon clearfix">
+                                    <a href="#">立即注册</a>
+                                    <a href="#">忘记密码</a>
+                                </div>
+                                <div class="other-way">
+                                    <p>也可以用以下帐号登录</p>
+                                    <a href="#" class=""><img src="picture/sign-in.jpg" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7 center-block float-none">
+                    <p>版权所有&copy; 华为技术有限公司 1998-2016。保留一切权利。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>
+<script>
+    $("#login .user input").focus(function(){
+       this.placeholder='';
+    });
+ $("#userName").blur(function(){
+     var userName = this.value;
+     if(userName==''){
+         this.placeholder='邮箱/帐号';
+         $("#userNameErrMsg").text('用户名不能为空');
+     }else{
+         $("#userNameErrMsg").text('');
+     }
+ });
+    $("#userPwd").blur(function(){
+        var userPwd=this.value;
+        if(userPwd==''){
+            this.placeholder='密码';
+            $("#userPwdErrMsg").text("密码不能为空");
+        }else{
+            $("#userPwdErrMsg").text('');
+        }
+    });
+</script>
+</body>
+</html>
